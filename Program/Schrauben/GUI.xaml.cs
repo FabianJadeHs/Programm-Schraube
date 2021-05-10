@@ -161,9 +161,9 @@ namespace Schrauben
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
             //Variablenzuweisung
-            cbx_Antwort1.SelectedItem = Guiversuch.Wunschgewindeart;
-            cbx_Antwort4.SelectedItem = Guiversuch.Wunschmaterial;
-            cbx_Antwort6.SelectedItem = Guiversuch.Wunschschraubenkopf;
+            Guiversuch.Wunschgewindeart = cbx_Antwort1.Text;
+            Guiversuch.Wunschmaterial= cbx_Antwort4.Text;
+            Guiversuch.Wunschschraubenkopf=cbx_Antwort6.Text;
             Guiversuch.Wunschgewindelaenge = double.Parse(txtb_Antwort2.Text);
             Guiversuch.Wunschschaftlaenge = double.Parse(txtb_Antwort3.Text);
             Guiversuch.Wunschanzahl = double.Parse(txtb_Antwort5.Text);
