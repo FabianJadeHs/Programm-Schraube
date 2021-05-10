@@ -49,10 +49,7 @@ namespace Schrauben
             //Regelgewinde = new string[] {} 
 
             DataContext = this;
-            DataContext = this;
-            DataContext = this;
-            DataContext = this;
-            
+                        
         }
         #endregion
 
@@ -81,22 +78,21 @@ namespace Schrauben
             Materialtabelle tab2 = new Materialtabelle();
             Festigkeitstabelle tab3 = new Festigkeitstabelle();
 
-            //Schraubenarray wird zeilenweise durchgegangen
-            foreach (Schraubenarray m in tab.getAll())
-            {
-                //wenn Regelgewinde ausgewähl, dann wird nur passendes angezeigt
-                //passt noch nicht, weil alles angezeigt wird
+           
                 
                 if (cbx_Antwort0.Text == "Regelgewinde")
+                { 
+
+                Schraubenarray[] Regelgewind = new Schraubenarray[33];
+
+                Array.Copy(tab.getAll(),0, Regelgewind, 0, 33);
+                //Schraubenarray wird zeilenweise durchgegangen
+                foreach (Schraubenarray m in Regelgewind)
+
                 {
-                   /* string[] Regelgewind = new string[33];
-
-                    Array.ConstrainedCopy(m.Gewindebezeichnung, 0, Regelgewind, 0, 32);
-                   */
-
-                    cbx_Antwort1.Items.Add(m.Gewindebezeichnung);
-
-                               
+                    cbx_Antwort1.Items.Add(m.Gewindebezeichnung);            
+                    
+                }                         
                 }
                 //Wenn Feingewinde ausgewählt
                 if (cbx_Antwort0.Text == "Feingewinde")
@@ -107,10 +103,20 @@ namespace Schrauben
                 //Wenn Trapezgewinde ausgewählt
                 if (cbx_Antwort0.Text == "Trapezgewinde")
                 {
+                Schraubenarray[] trapezSchraubenArray = new Schraubenarray[6];
+
+                Array.Copy(tab.getAll(), 34, trapezSchraubenArray, 0, 6);
+                //Schraubenarray wird zeilenweise durchgegangen
+                foreach (Schraubenarray m in trapezSchraubenArray)
+
+                {
                     cbx_Antwort1.Items.Add(m.Gewindebezeichnung);
+
                 }
-                
+                // cbx_Antwort1.Items.Add(m.Gewindebezeichnung);
             }
+                
+            
             //beispielsweise comboboxfüllung
             foreach (Festigkeitsarray o in tab3.getAll())
             {
