@@ -24,6 +24,7 @@ namespace Schrauben
     /// </summary>
     public partial class GUI : UserControl
     {
+        private Schraube test1;
         public string[] Arten { get; set; }
         public string[] Regelgewinde { get; set; }
         public string[] Richtung { get; set; }
@@ -177,7 +178,7 @@ namespace Schrauben
             richTextBox.Selection.Text="";
 
             //neues Objekt wird erzeugt
-            Schraube test1 = new Schraube();
+            test1 = new Schraube();
 
             //benötigte Variablen werden aus Eingaben in der GUI genommen
             test1.Wunschgewindeart = cbx_Antwort1.Text;                     
@@ -232,7 +233,7 @@ namespace Schrauben
 
         public void btn_Exportieren_Click(object sender, RoutedEventArgs e)
         {
-            new CatiaControl();
+            new CatiaControl(test1);
         }
 
     }

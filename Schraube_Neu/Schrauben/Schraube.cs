@@ -2,7 +2,7 @@
 
 namespace Schrauben
 {
-    class Schraube
+    public class Schraube
     {
         // Eigenschaften der Schraube
         public double Gewindelaenge { get; set; }

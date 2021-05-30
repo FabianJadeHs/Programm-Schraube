@@ -23,7 +23,7 @@ namespace Schrauben
 
     public class CatiaControl
     {
-        public CatiaControl()
+        public CatiaControl(Schraube schraube)
         {
             try
             {
