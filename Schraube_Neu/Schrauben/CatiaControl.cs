@@ -43,45 +43,48 @@ namespace Schrauben
                     cc.ErstelleLeereSkizze();
                     Console.WriteLine("2");
 
-                    Produkt dieSchraube = new Produkt(60, 50, "Standardgewinde", "M8", 5.3d, 4d, 1.25d);     //Was für Daten will er hier in der Klammer haben????
+                    Produkt dasProdukt = new Produkt(schraube) ;     //Was für Daten will er hier in der Klammer haben????
 
-                    cc.ErzeugeZylinder(dieSchraube);
+                    cc.ErzeugeZylinder(schraube);
                     Console.WriteLine("Schaft");
+                                       
 
-                    
-                    cc.ErzeugeGewindeHelix(dieSchraube);
+                    cc.ErzeugeGewindeHelix(schraube);
                     Console.WriteLine("Gewinde");
 
-                    if (dieSchraube.Wunschschraubenkopf == "Zylinderkopf")       
+                    cc.Senkkopf(schraube);
+                    Console.WriteLine("Senkkopf");
+                    /*
+                    if (dasProdukt.Wunschschraubenkopf == "Zylinderkopf")       
                     {
-                        cc.Zylinderkopf(dieSchraube);
+                        cc.Zylinderkopf(dasProdukt);
                         Console.WriteLine("Zylinderkopf");
 
-                        cc.InnensechskantZ(dieSchraube);
+                        cc.InnensechskantZ(dasProdukt);
                         Console.WriteLine("Innensechskant");
                     }
 
-                    else if (dieSchraube.Wunschschraubenkopf == "Sechskant")
+                    else if (dasProdukt.Wunschschraubenkopf == "Sechskant")
                     {
-                        cc.Sechskant(dieSchraube);
+                        cc.Sechskant(dasProdukt);
                         Console.WriteLine("Sechskant");
                     }
                     
-                    else if (dieSchraube.Wunschschraubenkopf == "Senkkopf")
+                    else if (dasProdukt.Wunschschraubenkopf == "Senkkopf")
                     {
-                        cc.Senkkopf(dieSchraube);
+                        cc.Senkkopf(dasProdukt);
                         Console.WriteLine("Senkkopf");
 
-                        cc.InnensechskantS(dieSchraube);
+                        cc.InnensechskantS(dasProdukt);
                         Console.WriteLine("Innensechskant");
                     }
 
-                    else if (dieSchraube.Wunschschraubenkopf == "Gewindestift")
+                    else if (dasProdukt.Wunschschraubenkopf == "Gewindestift")
                     {
-                        cc.Gewindestift(dieSchraube);
+                        cc.Gewindestift(dasProdukt);
                         Console.WriteLine("Gewindestift");
 
-                        cc.InnensechskantGS(dieSchraube);
+                        cc.InnensechskantGS(dasProdukt);
                         Console.WriteLine("Innensechskant");
                     }
                                        
@@ -90,6 +93,7 @@ namespace Schrauben
                     //Wann und wo den Schlitz anbinden
                     cc.Schlitz();
                     Console.WriteLine("Schlitz");
+                    */
                 }
                 else
                 {

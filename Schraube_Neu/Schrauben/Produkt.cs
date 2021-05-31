@@ -51,7 +51,12 @@
             this.SechskanttiefeGS = SechskanttiefeGS;
 
         }
+        public Produkt(Schraube meineSchraube)
+        {
+            laenge = meineSchraube.Gewindelaenge;
+            //...
+        }
     }
-
+    
 }
 

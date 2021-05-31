@@ -86,7 +86,7 @@ namespace Schrauben
         #endregion
 
         #region Schraube
-        internal void ErzeugeZylinder(Produkt mySchraube)
+        internal void ErzeugeZylinder(Schraube mySchraube)
         {
             myPart = hsp_catiaPartDoc.Part;
             Bodies bodies = myPart.Bodies;
@@ -115,17 +115,17 @@ namespace Schrauben
 
             // Schraubenschaft durch ein Pad erstellen
             Reference RefMySchaft = myPart.CreateReferenceFromObject(hsp_catiaSkizze);
-            mySchaft = SF.AddNewPadFromRef(RefMySchaft, mySchraube.laenge);
+            mySchaft = SF.AddNewPadFromRef(RefMySchaft, mySchraube.Wunschgewindelaenge);
             myPart.Update();
 
         }                  
 
         // Erzeugt eine Helix 
-        internal void ErzeugeGewindeHelix(Produkt mySchraube)
+        internal void ErzeugeGewindeHelix(Schraube mySchraube)
         {
-            Double P = mySchraube.P;
-            Double Ri = mySchraube.Ri;
-            double l = mySchraube.laenge;
+            double P = mySchraube.Steigung();
+            double Ri = mySchraube.Ri;
+            double l =mySchraube.Wunschgewindelaenge;
             HSF = (HybridShapeFactory)myPart.HybridShapeFactory;
 
             Sketch myGewinde = makeGewindeSkizze(mySchraube);
@@ -203,11 +203,11 @@ namespace Schrauben
         }
 
         // Separate Skizzenerzeugung für de Helix
-        private Sketch makeGewindeSkizze(Produkt dieSchraube)
+        private Sketch makeGewindeSkizze(Schraube dieSchraube)
         {
-            Double P = dieSchraube.P;
+            Double P = dieSchraube.Steigung();
             Double Ri = dieSchraube.Ri;
-            double l = dieSchraube.laenge;
+            double l = dieSchraube.Wunschgewindelaenge;
 
             OriginElements catOriginElements = hsp_catiaPartDoc.Part.OriginElements;
             Reference RefmyPlaneZX = (Reference)catOriginElements.PlaneZX;
@@ -402,9 +402,9 @@ namespace Schrauben
 
         }
 
-        internal void Senkkopf(Produkt mySchraube)
+        internal void Senkkopf(Schraube mySchraube)
         {
-            double KR = mySchraube.KopfhoeheS;       //Stmmt nicht ganz mit der wirklichen Höhe überein, muss größer als die Höhe sein!!!!
+            double KR = 5;       //Stmmt nicht ganz mit der wirklichen Höhe überein, muss größer als die Höhe sein!!!!
 
             OriginElements catOriginElements = hsp_catiaPartDoc.Part.OriginElements;
             Reference RefmyPlaneZX = (Reference)catOriginElements.PlaneZX;

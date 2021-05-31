@@ -16,6 +16,7 @@ namespace Schrauben
         public double Wunschanzahl { get; set; }
         public string Wunschschraubenkopf { get; set; }
         public string Wunschfestigkeit { get; set; }
+        public double Ri { get { return Schaftlaenge / 2.0; } }
 
 
 
