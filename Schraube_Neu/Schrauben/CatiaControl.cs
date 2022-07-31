@@ -43,7 +43,7 @@ namespace Schrauben
                     cc.ErstelleLeereSkizze();
                     Console.WriteLine("2");
 
-                    Produkt dasProdukt = new Produkt(schraube) ;     //Was für Daten will er hier in der Klammer haben????
+                    //Produkt dasProdukt = new Produkt(schraube.Wunschgewindelaenge,) ;     //Was für Daten will er hier in der Klammer haben????
 
                     cc.ErzeugeZylinder(schraube);
                     Console.WriteLine("Schaft");
